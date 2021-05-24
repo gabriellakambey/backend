@@ -22,7 +22,7 @@ public class PersonService {
 		this.personRepository = personRepository;
 	}
 
-	public PersonModel createPerson(String name, String email, String password, String address, String dob) {
+	public PersonModel createPerson(String name, String email, String password, String couple, String nomorHP, String tanggal) {
 		PersonModel personModel = new PersonModel();
 		
 		if(Objects.nonNull(personRepository.getPersonModelByUserEmail(email))) {
@@ -31,8 +31,9 @@ public class PersonService {
 			personModel.setUserName(name);
 			personModel.setUserEmail(email);
 			personModel.setUserPassword(password);
-			personModel.setUserAddress(address);
-			personModel.setUserDob(dob);
+			personModel.setUserCouple(couple);
+			personModel.setNomorHp(nomorHP);
+			personModel.setTglPernikahan(tanggal);
 			
 			return personRepository.save(personModel);
 		}

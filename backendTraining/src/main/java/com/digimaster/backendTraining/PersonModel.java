@@ -8,23 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_user")
+@Table(name = "user_tbl")
 public class PersonModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
+	@Column(name = "id_user")
 	private int userId;
-	@Column(name = "user_name")
+	@Column(name = "nama_user")
 	private String userName;
-	@Column(name = "user_email")
+	@Column(name = "email_user")
 	private String userEmail;
-	@Column(name = "user_password")
+	@Column(name = "password_user")
 	private String userPassword;
-	@Column(name = "user_address")
-	private String userAddress; 
-	@Column(name = "user_dob")
-	private String userDob;
+	@Column(name = "nama_pasangan_user")
+	private String userCouple; 
+	@Column(name = "tgl_pernikahan")
+	private String tglPernikahan;
+	@Column(name = "nomorhp_user")
+	private String nomorHp;
 	
 	
 	public int getUserId() {
@@ -51,18 +53,25 @@ public class PersonModel {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	public String getUserAddress() {
-		return userAddress;
+	public String getUserCouple() {
+		return userCouple;
 	}
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
+	public void setUserCouple(String userCouple) {
+		this.userCouple = userCouple;
 	}
-	public String getUserDob() {
-		return userDob;
+	public String getTglPernikahan() {
+		return tglPernikahan;
 	}
-	public void setUserDob(String userDob) {
-		this.userDob = userDob;
+	public void setTglPernikahan(String tglPernikahan) {
+		this.tglPernikahan = tglPernikahan;
 	}
+	public String getNomorHp() {
+		return nomorHp;
+	}
+	public void setNomorHp(String nomorHp) {
+		this.nomorHp = nomorHp;
+	}
+	
 	
 	
 }

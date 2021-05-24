@@ -19,9 +19,9 @@ public class FirstController {
 		
 
 	@PostMapping("/register")
-	public GetPersonModel createPerson(@RequestParam String name, @RequestParam String email, @RequestParam String password, @RequestParam String address, @RequestParam String dob) {
+	public GetPersonModel createPerson(@RequestParam String name, @RequestParam String email, @RequestParam String password, @RequestParam String couple, @RequestParam String tanggal, @RequestParam String nomorHp) {
 		GetPersonModel getPerson = new GetPersonModel();
-		PersonModel personModel = personService.createPerson(name, email, password, address, dob);
+		PersonModel personModel = personService.createPerson(name, email, password, couple, tanggal, nomorHp);
 		if (Objects.nonNull(personModel)) {
 			getPerson.setStatus("success");
 			getPerson.setPersonModel(personModel);
